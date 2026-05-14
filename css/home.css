@@ -1,0 +1,140 @@
+:root {
+    --primary: #0a2e1c;
+    --accent: #c4fb6d;
+    --gold: #d4a373;
+    --white: #ffffff;
+    --bg-dark: #06110a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* ── NAV ── */
+.top-nav {
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    padding: 30px 60px;
+    display: flex; justify-content: center;
+}
+
+.nav-container {
+    width: 100%; max-width: 1600px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.nav-links a {
+    color: white; text-decoration: none; font-size: 10px; letter-spacing: 3px;
+    margin-right: 35px; font-weight: 600; transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.auth-login {
+    color: white; text-decoration: none; font-size: 10px;
+    margin-right: 25px; letter-spacing: 2px;
+}
+
+.auth-register {
+    padding: 10px 25px; border: 1px solid var(--accent); color: var(--accent);
+    text-decoration: none; font-size: 10px; font-weight: 700; letter-spacing: 2px; transition: 0.4s;
+}
+.auth-register:hover { background: var(--accent); color: var(--primary); }
+
+.nav-username {
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: rgb(124, 184, 34);
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.auth-logout {
+    padding: 10px 25px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.auth-logout:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+/* ── HERO ── */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1920') center/cover no-repeat;
+    display: flex; align-items: center; justify-content: center; position: relative;
+}
+
+.hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(6,17,10,0.3), rgba(6,17,10,0.9));
+}
+
+.hero-content { position: relative; z-index: 10; text-align: center; padding: 0 20px; }
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 70px);
+    letter-spacing: 8px;
+    margin: 15px 0;
+    font-weight: 400;
+}
+.brand-sub { font-size: 10px; letter-spacing: 8px; color: var(--accent); }
+.brand-tagline { font-size: 9px; letter-spacing: 5px; opacity: 0.6; }
+
+.hero-message { margin-top: 60px; max-width: 800px; }
+
+.message-top { font-size: 11px; letter-spacing: 5px; color: var(--gold); margin-bottom: 20px; }
+
+.message-main { font-size: clamp(24px, 4vw, 42px); font-weight: 300; line-height: 1.3; }
+
+.message-main span {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; color: var(--white);
+    border-bottom: 1px solid var(--accent);
+}
+
+.scroll-indicator { margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.scroll-indicator .line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--accent), transparent); }
+.scroll-indicator .text { font-size: 9px; letter-spacing: 4px; opacity: 0.6; }
+
+/* ── SECCIONES ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+.intro-section { padding: 150px 0; }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+.gold-label { color: var(--gold); font-size: 11px; letter-spacing: 4px; font-weight: 700; margin-bottom: 25px; display: block; }
+.intro-text h3 { font-size: 45px; font-family: 'Playfair Display', serif; margin-bottom: 30px; }
+.intro-text p { color: rgba(255,255,255,0.7); font-size: 17px; margin-bottom: 30px; }
+.link-explore { color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+
+.intro-visual img { width: 100%; border-radius: 4px; filter: grayscale(20%); }
+
+.rooms-section { padding-bottom: 150px; }
+.section-header { text-align: center; margin-bottom: 80px; }
+.room-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.room-card img { width: 100%; height: 500px; object-fit: cover; border-radius: 2px; }
+.room-info { padding: 25px 0; }
+.room-info h4 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 10px; }
+.room-info p { opacity: 0.6; font-size: 14px; }
+
+.main-footer { padding: 80px; text-align: center; font-size: 10px; letter-spacing: 3px; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.05); }
+
+@media (max-width: 992px) {
+    .intro-grid, .room-grid { grid-template-columns: 1fr; }
+    .top-nav { padding: 20px; }
+    .brand-name { font-size: 28px; letter-spacing: 5px; }
+}

@@ -1,0 +1,185 @@
+:root {
+    --primary: #0a2e1c;
+    --accent: #c4fb6d;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.04); /* Un toque más de opacidad para el fondo con imagen */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    /* Usamos la misma imagen de alta calidad del inicio */
+    --bg-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1920&auto=format&fit=crop');
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    /* FONDO CON IMAGEN DE LUJO */
+    background: linear-gradient(135deg, rgba(6,17,10,0.8) 0%, rgba(10,46,28,0.9) 100%), var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    
+    /* Efecto de desenfoque sutil en el fondo para enfocar el formulario */
+    backdrop-filter: blur(3px);
+}
+
+.Contenedor {
+    /* EFECTO GLASSMORPHISM REALZADO */
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3.5rem 3rem;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+    
+    /* Animación de entrada suave */
+    animation: fadeIn 0.8s ease-out;
+}
+.xd{
+    background-color: #1a1a1a; /* Fondo oscuro sólido (muchos navegadores no aceptan transparencia aquí) */
+    color: #ffffff; /* Texto verde */
+    padding: 10px; 
+}
+
+select.input-warp {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--white);
+    outline: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+select.option.input-warp{
+    background-color: rgba(196, 251, 109, 0.3); 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.Contenedor h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--white);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+form { display: flex; flex-direction: column; gap: 10px; }
+
+label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-top: 12px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--white);
+    outline: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+input:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(196, 251, 109, 0.1);
+}
+
+/* Errores */
+span {
+    font-size: 11px;
+    color: #ff8080;
+    margin-top: 5px;
+    font-weight: 400;
+    padding-left: 5px;
+}
+
+button[type="submit"] {
+    margin-top: 2.5rem;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 20px rgba(196, 251, 109, 0.15);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(196, 251, 109, 0.3);
+    filter: brightness(1.1);
+}
+
+
+.auth-footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.auth-footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-left: 5px;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+    color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .Contenedor { padding: 2.5rem 1.5rem; }
+    .Contenedor h1 { font-size: 24px; }
+}
+
+.bienvenido-user {
+    font-size: 130px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 50px;
+}
+
+.bienvenido-user span {
+    color: #c4fb6d;
+    font-weight: 600;
+}
