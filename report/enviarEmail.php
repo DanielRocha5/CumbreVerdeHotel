@@ -11,8 +11,8 @@ function enviarCorreo($emailUsuario,$nombreUsuario){
         $mail->isSMTP();
         $mail->Host='smtp.gmail.com';
         $mail->SMTPAuth=true;
-        $mail->Username='hotelcumbreverde@gmail.com';
-        $mail->Password='mdrv tiqb dxuv dmme';
+        $mail->Username=$_ENV['MAIL_USER'];
+        $mail->Password=$_ENV['MAIL_PASS'];
         $mail->SMTPSecure='tls';
         $mail->Port=587;
 
